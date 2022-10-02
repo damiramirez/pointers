@@ -16,7 +16,7 @@ When we talk about *memory*, we mostly talk about the RAM. Each segment is 1 byt
 
 ## Pointers
 
-A *pointer* is a variable whose value is the address of another variable.
+A *pointer* is a variable whose value is the address of another variable. The data type of the pointer must be the same data type as the variable.
 
 ```cpp
   int a = 10; // actual variable declaration
@@ -38,4 +38,14 @@ We can perform arithmetic operations on the pointers like addition, subtraction,
 
   cout << "Pointer points to: " << p << endl; // 0x93f95ff7d4
   cout << "Pointer points to + 1: " << (p + 1) << endl; // 0x93f95ff7d8 (4 bytes more)
-```
+``` 
+
+## Pointer to pointer
+
+Pointer to a pointer is a form of multiple indirection or a chain of pointers.
+Normally, a pointer contains the address of a variable. When we define a
+pointer to a pointer, the first pointer contains the address of the second
+pointer, which points to the location that contains the actual value as shown
+below.
+
+A variable that is a pointer to a pointer must be declared as such `int **pointerToPointer`.
