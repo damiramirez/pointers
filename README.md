@@ -76,3 +76,11 @@ When we declare a variable inside a function, we call it a local variable. We ca
     *p = (*p) + 1;
   }
   ```
+
+## Pointers and Arrays
+
+An array is a consecutive group of memory locations that all have the same name and the same type. 
+
+![](images/arrays-memory.png)
+
+If we assign a pointer to an array, it will take the address of the first element of the array. So to see the values of the array, we can do `A[i]` or `*(A + i)`
