@@ -49,3 +49,30 @@ pointer, which points to the location that contains the actual value as shown
 below.
 
 A variable that is a pointer to a pointer must be declared as such `int **pointerToPointer`.
+
+## Pointer as function arguments
+
+When we declare a variable inside a function, we call it a local variable. We can access this variable only within the function in which we have declared the variable.
+
+- **Call by value**
+  
+  The call by value method of passing arguments to a function copies the actual value of an argument into the formal parameter of the function. In this case, changes made to the parameter inside the function have no effect on the argument.
+
+  ```cpp
+  void increment(int a)
+  {
+    // The address of this variable is different from the one passed by argument
+    a = a + 1; 
+  }
+  ```
+
+- **Call by reference**
+  
+  The call by reference method of passing arguments to a function copies the reference of an argument into the formal parameter. Inside the function, the reference is used to access the actual argument used in the call. This means that changes made to the parameter affect the passed argument.
+
+  ```cpp
+    void increment(int *p)
+  {
+    *p = (*p) + 1;
+  }
+  ```
