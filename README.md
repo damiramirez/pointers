@@ -27,3 +27,15 @@ A *pointer* is a variable whose value is the address of another variable.
 
 - `&` give me the address of the particular variable. 
 - `*p` give me the value at the location that it points to. This is called *dereferencing*
+
+## Pointers Arithmetic
+
+We can perform arithmetic operations on the pointers like addition, subtraction, etc. However, as we know that pointer contains the address, the result of an arithmetic operation performed on the pointer will also be a pointer if the other operand is of type integer.
+
+```cpp
+  int a = 10;
+  int *p = &a;
+
+  cout << "Pointer points to: " << p << endl; // 0x93f95ff7d4
+  cout << "Pointer points to + 1: " << (p + 1) << endl; // 0x93f95ff7d8 (4 bytes more)
+```
