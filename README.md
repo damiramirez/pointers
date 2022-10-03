@@ -83,4 +83,20 @@ An array is a consecutive group of memory locations that all have the same name 
 
 ![](images/arrays-memory.png)
 
-If we assign a pointer to an array, it will take the address of the first element of the array. So to see the values of the array, we can do `A[i]` or `*(A + i)`
+An array is considered to be the same thing as a pointer to the first item in the array. So to see the values of the array, we can do `A[i]` or `*(A + i)`
+
+## Arrays as function arguments
+
+When we pass an array as function arguments, it creates a pointer variable and copy the address of the first element of the array. So the compiler converts the `int A[]` to `int *A`.
+
+Arrays always are  passed as reference parameters. 
+
+## Character arrays and pointers
+
+Strings are groups of characters. The collection of characters is stored in the form of arrays. So strings are arrays of type char terminated with null character, that is, `\0`. Size of array must to be greater than or equal to the number of characters in string + 1.
+
+Arrays and pointers are different types that are used in similar manner. We can use both types to read and write.
+
+If we declare an array of character as `char C[20]`, it will go on the stack. But if we declare as `char *C`, a string literal, it is stored as a compile-time constant, so we cannot modify it.
+
+We can add `const` to the argument of a function. The function can only read and not modify.
