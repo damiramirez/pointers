@@ -100,3 +100,22 @@ Arrays and pointers are different types that are used in similar manner. We can 
 If we declare an array of character as `char C[20]`, it will go on the stack. But if we declare as `char *C`, a string literal, it is stored as a compile-time constant, so we cannot modify it.
 
 We can add `const` to the argument of a function. The function can only read and not modify.
+
+## Pointers and multi-dimensional arrays
+
+To declare a 2-dimensional array `int a[row][col]`. So you have `row` 1-d arrays of `col` integers. In memory, each row of the array will occupy `col * sizeof(int)`. 
+
+`b[i][j] = *(b[i] + j) = *(*(b + 1) + j)`
+
+If we want a pointer to point to the array, we must create an array of pointers `int (*p)[col] = a`.
+
+![](images/multi-arrays.PNG)
+
+## Dynamic memory
+
+The memory can be divided into 4 segments:
+
+1. Code (text) -> Instruction
+2. Static/Global -> Global variables
+3. Stack -> Functions and local variables
+4. Heap -> Dynamic variables - free pool of memory - `new (malloc)` and `delete (free)`
